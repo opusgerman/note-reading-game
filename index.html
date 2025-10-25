@@ -50,13 +50,14 @@
     let clef = null;
     let difficulty = null;
 
-    const NOTE_NAMES = ['C','D','E','F','G','A','H']; // 독일식 표기 유지
-    const stepMap = { C:0, D:1, E:2, F:3, G:4, A:5, H:6 };
+    // 🎵 한국식 음이름
+    const NOTE_NAMES = ['도','레','미','파','솔','라','시'];
+    const stepMap = { 도:0, 레:1, 미:2, 파:3, 솔:4, 라:5, 시:6 };
 
-    // 기준 (Treble: E4=1선=240, Bass: G2=1선=240)
+    // 🎼 기준 (Treble: 미4 = 1선 = 240, Bass: 솔2 = 1선 = 240)
     const reference = {
-      treble: { note: 'E', octave: 4, y: 240 },
-      bass:   { note: 'G', octave: 2, y: 240 }
+      treble: { note: '미', octave: 4, y: 240 },
+      bass:   { note: '솔', octave: 2, y: 240 }
     };
 
     function diatonicIndex(name, octave){
@@ -161,9 +162,9 @@
       ctx.textBaseline="middle";
       ctx.textAlign="left";
       if (clef==='treble'){
-        ctx.fillText("\uD834\uDD1E",5,bottom-20); // 𝄞
+        ctx.fillText("\uD834\uDD1E",5,bottom-20); // 높은음자리표
       }else{
-        ctx.fillText("\uD834\uDD22",5,bottom-30); // 𝄢
+        ctx.fillText("\uD834\uDD22",5,bottom-30); // 낮은음자리표
       }
     }
 
@@ -262,3 +263,4 @@
   </script>
 </body>
 </html>
+
